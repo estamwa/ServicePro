@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - ServicePro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="ServicePro Logo">
+                <h1>ServicePro Admin</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="admin.html">Dashboard</a></li>
+                    <li><a href="#users">Users</a></li>
+                    <li><a href="#technicians">Technicians</a></li>
+                    <li><a href="#requests">Service Requests</a></li>
+                    <li><a href="#reports">Reports</a></li>
+                    <li><a href="index.html" class="btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="admin-dashboard">
+        <div class="container">
+            <h2>Admin Dashboard</h2>
+            
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <h3>Total Users</h3>
+                    <p>1,245</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Technicians</h3>
+                    <p>87</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Requests</h3>
+                    <p>23</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Completed Today</h3>
+                    <p>42</p>
+                </div>
+            </div>
+
+            <div class="admin-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="pending-requests">Pending Requests</button>
+                    <button class="tab-btn" data-tab="technician-management">Technician Management</button>
+                    <button class="tab-btn" data-tab="user-management">User Management</button>
+                    <button class="tab-btn" data-tab="reports">Reports</button>
+                </div>
+
+                <div class="tab-content active" id="pending-requests">
+                    <h3>Pending Service Requests</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Service Type</th>
+                                <th>Customer</th>
+                                <th>Request Date</th>
+                                <th>Preferred Time</th>
+                                <th>Urgency</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#SR-1001</td>
+                                <td>Electrician</td>
+                                <td>Jane Smith</td>
+                                <td>2023-06-15</td>
+                                <td>Morning</td>
+                                <td>Urgent</td>
+                                <td>
+                                    <button class="btn small">View</button>
+                                    <button class="btn small primary">Assign</button>
+                                </td>
+                            </tr>
+                            <!-- More rows -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-content" id="technician-management">
+                    <h3>Technician Management</h3>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search technicians...">
+                        <button class="btn">Search</button>
+                        <button class="btn primary">Add New Technician</button>
+                    </div>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Service Type</th>
+                                <th>Rating</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#T-1001</td>
+                                <td>John Doe</td>
+                                <td>Electrician</td>
+                                <td>4.8 ★</td>
+                                <td>Active</td>
+                                <td>
+                                    <button class="btn small">View</button>
+                                    <button class="btn small">Edit</button>
+                                    <button class="btn small danger">Deactivate</button>
+                                </td>
+                            </tr>
+                            <!-- More rows -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Other tab contents would be similar -->
+            </div>
+
+            <div class="admin-tools">
+                <h3>Quick Tools</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h4>Send Notification</h4>
+                        <form class="notification-form">
+                            <div class="form-group">
+                                <label>Recipient</label>
+                                <select>
+                                    <option>All Users</option>
+                                    <option>All Technicians</option>
+                                    <option>Specific User</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea></textarea>
+                            </div>
+                            <button class="btn primary">Send</button>
+                        </form>
+                    </div>
+
+                    <div class="tool-card">
+                        <h4>Generate Report</h4>
+                        <form class="report-form">
+                            <div class="form-group">
+                                <label>Report Type</label>
+                                <select>
+                                    <option>Service Requests</option>
+                                    <option>Technician Performance</option>
+                                    <option>Revenue</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Date Range</label>
+                                <div class="date-range">
+                                    <input type="date">
+                                    <span>to</span>
+                                    <input type="date">
+                                </div>
+                            </div>
+                            <button class="btn primary">Generate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
